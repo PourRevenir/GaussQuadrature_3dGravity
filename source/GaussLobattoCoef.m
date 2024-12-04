@@ -1,13 +1,13 @@
 function [w,x] = GaussLobattoCoef(n)
-%GaussRadauCoef Calculate Gauss-Radau quadrature coefficients and
+%GaussLobattoCoef Calculate Gauss-Lobatto quadrature coefficients and
 %Gaussian points.
 %
-%   [w,x] = GaussRadauCoef(n)
+%   [w,x] = GaussLobattoCoef(n)
 %
 %   Input
 %       n - number of Gaussian points
 %   Output
-%       w - Gauss-Radau quadrature coefficients
+%       w - Gauss-Lobatto quadrature coefficients
 %       x - Gaussian points
 %
 
