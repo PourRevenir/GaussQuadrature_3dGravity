@@ -1,4 +1,4 @@
-function I = GaussLegendreQuad3(func,a1,a2,b1,b2,c1,c2,n1,n2,n3)
+function I = GaussLegendreQuad3(func,x,y,z,wi,wj,wk)
 %GaussLegendreQuad3 Computing triple integrals of the  function using
 %Gauss-Legendre quadrature.
 %   
@@ -12,18 +12,6 @@ function I = GaussLegendreQuad3(func,a1,a2,b1,b2,c1,c2,n1,n2,n3)
 %   Output
 %       I - integrals of the function
 %
-
-[wi,x] = GaussLegendreCoef(n1);
-[wj,y] = GaussLegendreCoef(n2);
-[wk,z] = GaussLegendreCoef(n3);
-
-wi = 0.5*(a2-a1)*wi;
-wj = 0.5*(b2-b1)*wj;
-wk = 0.5*(c2-c1)*wk;
-
-x = 0.5*((a2-a1)*x+a1+a2);
-y = 0.5*((b2-b1)*y+b1+b2);
-z = 0.5*((c2-c1)*z+c1+c2);
 
 [wi,wj,wk] = meshgrid(wi,wj,wk);
 [x,y,z] = meshgrid(x,y,z);
