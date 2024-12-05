@@ -16,7 +16,7 @@ function I = GaussChebyshevQuad3(func,x,y,z,wi,wj,wk)
 [wi,wj,wk] = meshgrid(wi,wj,wk);
 [x,y,z] = meshgrid(x,y,z);
 
-I = wi.*wj.*wk.*r.*func(x,y,z);
+I = wi.*wj.*wk.*func(x,y,z);
 I = sum(I(:));
 
 end

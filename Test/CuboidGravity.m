@@ -48,10 +48,11 @@ switch options.method
         end
         gx = G*model(7)*gx;
         subplot(4,3,1)
-        contourf(xx,yy,gx)
+        contourf(xx,yy,gx')
         xlabel('x')
         ylabel('y')
         title('gx')
+        axis image
         colorbar
 
         for i = 1:X
@@ -62,10 +63,11 @@ switch options.method
         end
         gy = G*model(7)*gy;
         subplot(4,3,2)
-        contourf(xx,yy,gy)
+        contourf(xx,yy,gy')
         xlabel('x')
         ylabel('y')
         title('gy')
+        axis image
         colorbar
 
         for i = 1:X
@@ -76,10 +78,11 @@ switch options.method
         end
         gz = G*model(7)*gz;
         subplot(4,3,3)
-        contourf(xx,yy,gz)
+        contourf(xx,yy,gz')
         xlabel('x')
         ylabel('y')
         title('gz')
+        axis image
         colorbar
 
         for i = 1:X
@@ -90,10 +93,11 @@ switch options.method
         end
         uxx = G*model(7)*uxx;
         subplot(4,3,4)
-        contourf(xx,yy,uxx)
+        contourf(xx,yy,uxx')
         xlabel('x')
         ylabel('y')
         title('uxx')
+        axis image
         colorbar
 
         for i = 1:X
@@ -104,10 +108,11 @@ switch options.method
         end
         uxy = G*model(7)*uxy;
         subplot(4,3,5)
-        contourf(xx,yy,uxy)
+        contourf(xx,yy,uxy')
         xlabel('x')
         ylabel('y')
         title('uxy')
+        axis image
         colorbar
 
         for i = 1:X
@@ -118,10 +123,11 @@ switch options.method
         end
         uxz = G*model(7)*uxz;
         subplot(4,3,6)
-        contourf(xx,yy,uxz)
+        contourf(xx,yy,uxz')
         xlabel('x')
         ylabel('y')
         title('uxz')
+        axis image
         colorbar
 
         for i = 1:X
@@ -132,10 +138,11 @@ switch options.method
         end
         uyy = G*model(7)*uyy;
         subplot(4,3,8)
-        contourf(xx,yy,uyy)
+        contourf(xx,yy,uyy')
         xlabel('x')
         ylabel('y')
         title('uyy')
+        axis image
         colorbar
 
         for i = 1:X
@@ -146,10 +153,11 @@ switch options.method
         end
         uyz = G*model(7)*uyz;
         subplot(4,3,9)
-        contourf(xx,yy,uyz)
+        contourf(xx,yy,uyz')
         xlabel('x')
         ylabel('y')
         title('uyz')
+        axis image
         colorbar
 
         for i = 1:X
@@ -160,17 +168,426 @@ switch options.method
         end
         uzz = G*model(7)*uzz;
         subplot(4,3,12)
-        contourf(xx,yy,uzz)
+        contourf(xx,yy,uzz')
         xlabel('x')
         ylabel('y')
         title('uzz')
+        axis image
         colorbar
 
     case 'gche'
+        figure("Name",'using Gauss-Chebyshev quadrature')
+        [xi,yj,zk,wi,wj,wk] = GaussChebyshevCoef3(model,options.n);
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gx',x(i),y(j),0);
+            gx(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gx = G*model(7)*gx;
+        subplot(4,3,1)
+        contourf(xx,yy,gx')
+        xlabel('x')
+        ylabel('y')
+        title('gx')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gy',x(i),y(j),0);
+            gy(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gy = G*model(7)*gy;
+        subplot(4,3,2)
+        contourf(xx,yy,gy')
+        xlabel('x')
+        ylabel('y')
+        title('gy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gz',x(i),y(j),0);
+            gz(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gz = G*model(7)*gz;
+        subplot(4,3,3)
+        contourf(xx,yy,gz')
+        xlabel('x')
+        ylabel('y')
+        title('gz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxx',x(i),y(j),0);
+            uxx(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxx = G*model(7)*uxx;
+        subplot(4,3,4)
+        contourf(xx,yy,uxx')
+        xlabel('x')
+        ylabel('y')
+        title('uxx')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxy',x(i),y(j),0);
+            uxy(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxy = G*model(7)*uxy;
+        subplot(4,3,5)
+        contourf(xx,yy,uxy')
+        xlabel('x')
+        ylabel('y')
+        title('uxy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxz',x(i),y(j),0);
+            uxz(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxz = G*model(7)*uxz;
+        subplot(4,3,6)
+        contourf(xx,yy,uxz')
+        xlabel('x')
+        ylabel('y')
+        title('uxz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uyy',x(i),y(j),0);
+            uyy(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uyy = G*model(7)*uyy;
+        subplot(4,3,8)
+        contourf(xx,yy,uyy')
+        xlabel('x')
+        ylabel('y')
+        title('uyy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uyz',x(i),y(j),0);
+            uyz(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uyz = G*model(7)*uyz;
+        subplot(4,3,9)
+        contourf(xx,yy,uyz')
+        xlabel('x')
+        ylabel('y')
+        title('uyz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uzz',x(i),y(j),0);
+            uzz(i,j) = GaussChebyshevQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uzz = G*model(7)*uzz;
+        subplot(4,3,12)
+        contourf(xx,yy,uzz')
+        xlabel('x')
+        ylabel('y')
+        title('uzz')
+        axis image
+        colorbar
 
     case 'grad'
+        figure("Name",'using Gauss-Radau quadrature')
+        [xi,yj,zk,wi,wj,wk] = GaussRadauCoef3(model,options.n);
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gx',x(i),y(j),0);
+            gx(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gx = G*model(7)*gx;
+        subplot(4,3,1)
+        contourf(xx,yy,gx')
+        xlabel('x')
+        ylabel('y')
+        title('gx')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gy',x(i),y(j),0);
+            gy(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gy = G*model(7)*gy;
+        subplot(4,3,2)
+        contourf(xx,yy,gy')
+        xlabel('x')
+        ylabel('y')
+        title('gy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gz',x(i),y(j),0);
+            gz(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gz = G*model(7)*gz;
+        subplot(4,3,3)
+        contourf(xx,yy,gz')
+        xlabel('x')
+        ylabel('y')
+        title('gz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxx',x(i),y(j),0);
+            uxx(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxx = G*model(7)*uxx;
+        subplot(4,3,4)
+        contourf(xx,yy,uxx')
+        xlabel('x')
+        ylabel('y')
+        title('uxx')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxy',x(i),y(j),0);
+            uxy(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxy = G*model(7)*uxy;
+        subplot(4,3,5)
+        contourf(xx,yy,uxy')
+        xlabel('x')
+        ylabel('y')
+        title('uxy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxz',x(i),y(j),0);
+            uxz(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxz = G*model(7)*uxz;
+        subplot(4,3,6)
+        contourf(xx,yy,uxz')
+        xlabel('x')
+        ylabel('y')
+        title('uxz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uyy',x(i),y(j),0);
+            uyy(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uyy = G*model(7)*uyy;
+        subplot(4,3,8)
+        contourf(xx,yy,uyy')
+        xlabel('x')
+        ylabel('y')
+        title('uyy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uyz',x(i),y(j),0);
+            uyz(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uyz = G*model(7)*uyz;
+        subplot(4,3,9)
+        contourf(xx,yy,uyz')
+        xlabel('x')
+        ylabel('y')
+        title('uyz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uzz',x(i),y(j),0);
+            uzz(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uzz = G*model(7)*uzz;
+        subplot(4,3,12)
+        contourf(xx,yy,uzz')
+        xlabel('x')
+        ylabel('y')
+        title('uzz')
+        axis image
+        colorbar
 
     case 'glob'
+        figure("Name",'using Gauss-Lobatto quadrature')
+        [xi,yj,zk,wi,wj,wk] = GaussLobattoCoef3(model,options.n);
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gx',x(i),y(j),0);
+            gx(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gx = G*model(7)*gx;
+        subplot(4,3,1)
+        contourf(xx,yy,gx')
+        xlabel('x')
+        ylabel('y')
+        title('gx')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gy',x(i),y(j),0);
+            gy(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gy = G*model(7)*gy;
+        subplot(4,3,2)
+        contourf(xx,yy,gy')
+        xlabel('x')
+        ylabel('y')
+        title('gy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gz',x(i),y(j),0);
+            gz(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gz = G*model(7)*gz;
+        subplot(4,3,3)
+        contourf(xx,yy,gz')
+        xlabel('x')
+        ylabel('y')
+        title('gz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxx',x(i),y(j),0);
+            uxx(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxx = G*model(7)*uxx;
+        subplot(4,3,4)
+        contourf(xx,yy,uxx')
+        xlabel('x')
+        ylabel('y')
+        title('uxx')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxy',x(i),y(j),0);
+            uxy(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxy = G*model(7)*uxy;
+        subplot(4,3,5)
+        contourf(xx,yy,uxy')
+        xlabel('x')
+        ylabel('y')
+        title('uxy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uxz',x(i),y(j),0);
+            uxz(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uxz = G*model(7)*uxz;
+        subplot(4,3,6)
+        contourf(xx,yy,uxz')
+        xlabel('x')
+        ylabel('y')
+        title('uxz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uyy',x(i),y(j),0);
+            uyy(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uyy = G*model(7)*uyy;
+        subplot(4,3,8)
+        contourf(xx,yy,uyy')
+        xlabel('x')
+        ylabel('y')
+        title('uyy')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uyz',x(i),y(j),0);
+            uyz(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uyz = G*model(7)*uyz;
+        subplot(4,3,9)
+        contourf(xx,yy,uyz')
+        xlabel('x')
+        ylabel('y')
+        title('uyz')
+        axis image
+        colorbar
+
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('uzz',x(i),y(j),0);
+            uzz(i,j) = GaussLobattoQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        uzz = G*model(7)*uzz;
+        subplot(4,3,12)
+        contourf(xx,yy,uzz')
+        xlabel('x')
+        ylabel('y')
+        title('uzz')
+        axis image
+        colorbar
 
 end
 
