@@ -18,6 +18,8 @@ arguments
     options.method(1,1) string {mustBeMember(options.method,{'gleg','gche','grad','glob'})} = 'gleg'
     options.n(1,3) {mustBeNumeric(options.n)} = [5,5,5]
 end
+
+
 G = 6.67408e-11;
 
 x = area(1,:);
@@ -190,7 +192,7 @@ switch options.method
         for i = 1:X
             for j = 1:Y
             f = IntegrandFunc('gx',x(i),y(j),0);
-            gx(i,j) = GaussRadaureQuad3(f,xi,yj,zk,wi,wj,wk);
+            gx(i,j) = GaussRadauQuad3(f,xi,yj,zk,wi,wj,wk);
             end
         end
         gx = G*model(7)*gx;
