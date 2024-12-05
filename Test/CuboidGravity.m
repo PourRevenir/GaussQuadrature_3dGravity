@@ -37,6 +37,7 @@ uxz = zeros(X,Y);
 uyz = zeros(X,Y);
 
 switch options.method
+    % Gauss-Legendre
     case 'gleg'
         figure("Name",'using Gauss-Legendre quadrature')
         [xi,yj,zk,wi,wj,wk] = GaussLegendreCoef3(model,options.n);
@@ -165,10 +166,44 @@ switch options.method
         ylabel('y')
         title('uzz')
         colorbar
+% Gauss-Chebyshev
+
+
+
+
+
+
 
     case 'gche'
 
+
+
+
+
+
+
+
     case 'grad'
+    % Gauss-Legendre
+        figure("Name",'using Gauss-Radau quadrature')
+        [xi,yj,zk,wi,wj,wk] = GaussRadauCoef3(model,options.n);
+        for i = 1:X
+            for j = 1:Y
+            f = IntegrandFunc('gx',x(i),y(j),0);
+            gx(i,j) = GaussRadaureQuad3(f,xi,yj,zk,wi,wj,wk);
+            end
+        end
+        gx = G*model(7)*gx;
+        subplot(4,3,1)
+        contourf(xx,yy,gx)
+        xlabel('x')
+        ylabel('y')
+        title('gx')
+        colorbar
+
+
+
+
 
     case 'glob'
 

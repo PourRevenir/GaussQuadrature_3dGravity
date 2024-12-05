@@ -1,3 +1,4 @@
+
 function area = ObservationPlane(model)
 %ObservingPlane The appropriate observation plane is automatically
 %generated according to the model.

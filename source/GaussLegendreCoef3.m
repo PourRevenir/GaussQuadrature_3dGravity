@@ -1,3 +1,4 @@
+
 function [x,y,z,wi,wj,wk] = GaussLegendreCoef3(model,n)
 %GaussLegendreCoef Calculate Gauss-Legendre quadrature coefficients and
 %Gaussian points.
