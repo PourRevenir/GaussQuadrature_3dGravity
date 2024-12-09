@@ -1,14 +1,14 @@
-function [x,y,z,wi,wj,wk] = GaussChebyshevCoef3(model,n)
+function [x,y,z,W] = GaussChebyshevCoef3(model,n)
 %GaussChebyshevCoef Calculate Gauss-Chebyshev quadrature coefficients and
 %Gaussian points.
 %
-%   [x,y,z,wi,wj,wk] = GaussChebyshevCoef(model,n)
+%   [x,y,z,W] = GaussChebyshevCoef(model,n)
 %
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]
 %       n - [n1,n2,n3]
 %   Output
-%       wi,wj,wk - Gauss-Chebyshev quadrature coefficients
+%       W - Gauss-Chebyshev quadrature coefficients
 %       x,y,z - Gaussian points
 %
 
@@ -26,4 +26,5 @@ function [x,y,z,wi,wj,wk] = GaussChebyshevCoef3(model,n)
 
     [wi,wj,wk] = meshgrid(wi,wj,wk);
     [x,y,z] = meshgrid(x,y,z);
+    W = wi.*wj.*wk;
 end

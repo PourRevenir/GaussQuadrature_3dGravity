@@ -1,14 +1,14 @@
-function [x,y,z,wi,wj,wk] = GaussLegendreCoef3(model,n)
+function [x,y,z,W] = GaussLegendreCoef3(model,n)
 %GaussLegendreCoef Calculate Gauss-Legendre quadrature coefficients and
 %Gaussian points.
 %
-%   [x,y,z,wi,wj,wk] = GaussLegendreCoef(model,n)
+%   [x,y,z,W] = GaussLegendreCoef(model,n)
 %
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]
 %       n - [n1,n2,n3]
 %   Output
-%       wi,wj,wk - Gauss-Legendre quadrature coefficients
+%       W - Gauss-Legendre quadrature coefficients
 %       x,y,z - Gaussian points
 %
 
@@ -26,5 +26,6 @@ function [x,y,z,wi,wj,wk] = GaussLegendreCoef3(model,n)
 
     [wi,wj,wk] = meshgrid(wi,wj,wk);
     [x,y,z] = meshgrid(x,y,z);
+    W = wi.*wj.*wk;
 
 end

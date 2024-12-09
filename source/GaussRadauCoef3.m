@@ -1,14 +1,14 @@
-function [x,y,z,wi,wj,wk] = GaussRadauCoef3(model,n)
+function [x,y,z,W] = GaussRadauCoef3(model,n)
 %GaussRadauCoef Calculate Gauss-Radau quadrature coefficients and
 %Gaussian points.
 %
-%   [x,y,z,wi,wj,wk] = GaussRadauCoef(model,n)
+%   [x,y,z,W] = GaussRadauCoef(model,n)
 %
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]
 %       n - [n1,n2,n3]
 %   Output
-%       wi,wj,wk - Gauss-Radau quadrature coefficients
+%       W - Gauss-Radau quadrature coefficients
 %       x,y,z - Gaussian points
 %
     
@@ -26,5 +26,6 @@ function [x,y,z,wi,wj,wk] = GaussRadauCoef3(model,n)
 
     [wi,wj,wk] = meshgrid(wi,wj,wk);
     [x,y,z] = meshgrid(x,y,z);
+    W = wi.*wj.*wk;
 
 end

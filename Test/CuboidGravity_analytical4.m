@@ -1,9 +1,9 @@
-function varargout = CuboidGravity_analytical(model,area)
-%CuboidGravityAnomaly Calculate cuboid gravity anomalies and plot
+function varargout = CuboidGravity_analytical4(model,area)
+%CuboidGravity_analytical4 Calculate cuboid gravity anomalies and plot
 %images. The cuboid gravity anomaly is calculated using the analytic solution
 % 
-%   value = CuboidGravity_integral3(model)
-%   value = CuboidGravity_integral3(model,area)
+%   value = CuboidGravity_analytical4(model)
+%   value = CuboidGravity_analytical4(model,area)
 %   
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]
@@ -14,5 +14,5 @@ arguments
     area(2,:)  {mustBeNumeric(area)} = ObservationPlane(model)
 end
 
-G = 6.67408e-6;
+    G = 6.67408e-6;
 end
