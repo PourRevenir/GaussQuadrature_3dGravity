@@ -15,7 +15,7 @@ arguments
     area(2,:)  {mustBeNumeric(area)} = ObservationPlane(model)
 end
 
-G = 6.67408e-11;
+G = 6.67408e-6;
 
 x = area(1,:);
 y = area(2,:);

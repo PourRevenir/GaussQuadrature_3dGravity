@@ -23,4 +23,7 @@ function [x,y,z,wi,wj,wk] = GaussChebyshevCoef3(model,n)
     x = 0.5*((model(2)-model(1))*x+model(1)+model(2));
     y = 0.5*((model(4)-model(3))*y+model(3)+model(4));
     z = 0.5*((model(6)-model(5))*z+model(5)+model(6));
+
+    [wi,wj,wk] = meshgrid(wi,wj,wk);
+    [x,y,z] = meshgrid(x,y,z);
 end

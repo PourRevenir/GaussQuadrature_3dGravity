@@ -24,4 +24,7 @@ function [x,y,z,wi,wj,wk] = GaussLegendreCoef3(model,n)
     y = 0.5*((model(4)-model(3))*y+model(3)+model(4));
     z = 0.5*((model(6)-model(5))*z+model(5)+model(6));
 
+    [wi,wj,wk] = meshgrid(wi,wj,wk);
+    [x,y,z] = meshgrid(x,y,z);
+
 end

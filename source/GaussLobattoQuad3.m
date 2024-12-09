@@ -13,10 +13,7 @@ function I = GaussLobattoQuad3(func,x,y,z,wi,wj,wk)
 %       I - integrals of the function
 %
 
-[wi,wj,wk] = meshgrid(wi,wj,wk);
-[x,y,z] = meshgrid(x,y,z);
-
-I = wi.*wj.*wk.*func(x,y,z);
-I = sum(I(:));
+    I = wi.*wj.*wk.*func(x,y,z);
+    I = sum(I(:));
 
 end

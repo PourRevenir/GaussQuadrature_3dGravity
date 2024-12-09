@@ -1,9 +1,9 @@
 function varargout = CuboidGravity(model,area,options)
-%CuboidGravityAnomaly Calculate cuboid gravity anomalies and plot images.
+%CuboidGravity Calculate cuboid gravity anomalies and plot images.
 % 
-%   value = CuboidGravity(model)
-%   value = CuboidGravity(model,area)
-%   value = CuboidGravity(model,area,method='gleg')
+%   CuboidGravity(model)
+%   CuboidGravity(model,area)
+%   CuboidGravity(model,area,method='gleg')
 %   value = CuboidGravity(model,area,'method','gleg','n',n)
 %
 %   Input
@@ -12,13 +12,16 @@ function varargout = CuboidGravity(model,area,options)
 %       method - 'gleg', 'gche', 'grad', 'glob'
 %       n - [n1,n2,n3]
 %
+%   Output
+%       value - a cell of 
+%
 arguments
     model(1,7) {mustBeNumeric(model)}
     area(2,:)  {mustBeNumeric(area)} = ObservationPlane(model)
     options.method(1,1) string {mustBeMember(options.method,{'gleg','gche','grad','glob'})} = 'gleg'
     options.n(1,3) {mustBeNumeric(options.n)} = [5,5,5]
 end
-G = 6.67408e-11;
+G = 6.67408e-6;
 
 x = area(1,:);
 y = area(2,:);

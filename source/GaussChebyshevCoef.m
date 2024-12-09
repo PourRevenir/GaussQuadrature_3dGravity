@@ -13,4 +13,5 @@ function [w,x] = GaussChebyshevCoef(n)
 
     w = pi/n*ones(1,n);
     x = cos(((1:n)-0.5)*pi/n);
+
 end

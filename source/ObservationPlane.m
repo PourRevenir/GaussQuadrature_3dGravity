@@ -11,12 +11,12 @@ function area = ObservationPlane(model)
 %       area - [x;y]
 % 
 
-    xl = 2*model(1)-model(2);
-    xr = -model(1)+2*model(2);
+    xl = 2.5*model(1)-1.5*model(2);
+    xr = -1.5*model(1)+2.5*model(2);
     dx = 0.02*xr-0.02*xl;
 
-    yl = 2*model(3)-model(4);
-    yr = -model(3)+2*model(4);
+    yl = 2.5*model(3)-1.5*model(4);
+    yr = -1.5*model(3)+2.5*model(4);
     dy = 0.02*yr-0.02*yl;
 
     x = xl:dx:xr;
