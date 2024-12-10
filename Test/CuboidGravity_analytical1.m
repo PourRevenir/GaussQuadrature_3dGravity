@@ -15,4 +15,5 @@ arguments
 end
 
     G = 6.67408e-6;
+    Gp = G*model(7);
 end

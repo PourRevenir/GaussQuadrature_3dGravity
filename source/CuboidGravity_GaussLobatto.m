@@ -1,4 +1,4 @@
-function varargout = CuboidGravity_GaussLobatto(model,area,n)
+function values = CuboidGravity_GaussLobatto(model,area,n)
 %CuboidGravity_GaussLobatto Gauss-Lobatto quadrature is used to
 %calculate cuboid gravity anomalies.
 %
@@ -42,28 +42,28 @@ end
 
     for i = 1:X
         for j = 1:Y
-        gx(i,j) = GaussLobattoQuad3(Integrand_gx(x(i),y(j),0),xi,yj,zk,W);
-        gy(i,j) = GaussLobattoQuad3(Integrand_gy(x(i),y(j),0),xi,yj,zk,W);
-        gz(i,j) = GaussLobattoQuad3(Integrand_gz(x(i),y(j),0),xi,yj,zk,W);
-        uxx(i,j) = GaussLobattoQuad3(Integrand_uxx(x(i),y(j),0),xi,yj,zk,W);
-        uxy(i,j) = GaussLobattoQuad3(Integrand_uxy(x(i),y(j),0),xi,yj,zk,W);
-        uxz(i,j) = GaussLobattoQuad3(Integrand_uxz(x(i),y(j),0),xi,yj,zk,W);
-        uyy(i,j) = GaussLobattoQuad3(Integrand_uyy(x(i),y(j),0),xi,yj,zk,W);
-        uyz(i,j) = GaussLobattoQuad3(Integrand_uyz(x(i),y(j),0),xi,yj,zk,W);
-        uzz(i,j) = GaussLobattoQuad3(Integrand_uzz(x(i),y(j),0),xi,yj,zk,W);
+        gx(i,j) = GaussLobattoQuad3(CuboidIntegrand_gx(x(i),y(j),0),xi,yj,zk,W);
+        gy(i,j) = GaussLobattoQuad3(CuboidIntegrand_gy(x(i),y(j),0),xi,yj,zk,W);
+        gz(i,j) = GaussLobattoQuad3(CuboidIntegrand_gz(x(i),y(j),0),xi,yj,zk,W);
+        uxx(i,j) = GaussLobattoQuad3(CuboidIntegrand_uxx(x(i),y(j),0),xi,yj,zk,W);
+        uxy(i,j) = GaussLobattoQuad3(CuboidIntegrand_uxy(x(i),y(j),0),xi,yj,zk,W);
+        uxz(i,j) = GaussLobattoQuad3(CuboidIntegrand_uxz(x(i),y(j),0),xi,yj,zk,W);
+        uyy(i,j) = GaussLobattoQuad3(CuboidIntegrand_uyy(x(i),y(j),0),xi,yj,zk,W);
+        uyz(i,j) = GaussLobattoQuad3(CuboidIntegrand_uyz(x(i),y(j),0),xi,yj,zk,W);
+        uzz(i,j) = GaussLobattoQuad3(CuboidIntegrand_uzz(x(i),y(j),0),xi,yj,zk,W);
         end
     end
 
-    gx = Gp*gx;
-    gy = Gp*gy;
-    gz = Gp*gz;
-    uxx = Gp*uxx;
-    uxy = Gp*uxy;
-    uxz = Gp*uxz;
-    uyy = Gp*uyy;
-    uyz = Gp*uyz;
-    uzz = Gp*uzz;
+    gx = Gp*gx';
+    gy = Gp*gy';
+    gz = Gp*gz';
+    uxx = Gp*uxx';
+    uxy = Gp*uxy';
+    uxz = Gp*uxz';
+    uyy = Gp*uyy';
+    uyz = Gp*uyz';
+    uzz = Gp*uzz';
 
-    varargout = {gx,gy,gz,uxx,uxy,uxz,uyy,uyz,uzz};
+    values = {gx,gy,gz,uxx,uxy,uxz,uyy,uyz,uzz};
 
 end
