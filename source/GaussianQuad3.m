@@ -1,8 +1,8 @@
-function I = GaussChebyshevQuad3(func,x,y,z,W)
-%GaussChebyshevQuad3 Computing triple integrals of the  function using
-%Gauss-Chebyshev quadrature.
+function I = GaussianQuad3(func,x,y,z,W)
+%GaussianQuad3 Computing triple integrals of the  function using
+%Gaussian quadrature.
 %   
-%   I = GaussChebyshevQuad3(func,x,y,z,W)
+%   I = GaussianQuad3(func,x,y,z,W)
 %   
 %   Input
 %       func - function to be computed

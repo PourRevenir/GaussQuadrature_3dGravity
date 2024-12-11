@@ -1,0 +1,26 @@
+function value = CuboidAnalytical(func,du,dv,dw)
+%CuboidAnalytical A function for calculating analytical solutions to gx.
+%
+%   value = CuboidAnalytical(func,du,dv,dw,r)
+%
+%   Input
+%       func - gw,Tww,Tuv
+%       du - [du1,du2]
+%       dv - [dv1,dv2]
+%       dw - [dw1,dw2]
+%
+%   Output
+%       value - gx
+%
+
+    value = ...
+    func(du(2),dv(2),dw(2),sqrt(du(2)^2+dv(2)^2+dw(2)^2))+...
+    func(du(2),dv(1),dw(1),sqrt(du(2)^2+dv(1)^2+dw(1)^2))+...
+    func(du(1),dv(2),dw(1),sqrt(du(1)^2+dv(2)^2+dw(1)^2))+...
+    func(du(1),dv(1),dw(2),sqrt(du(1)^2+dv(1)^2+dw(2)^2))-...
+    func(du(1),dv(2),dw(2),sqrt(du(1)^2+dv(2)^2+dw(2)^2))-...
+    func(du(2),dv(1),dw(2),sqrt(du(2)^2+dv(1)^2+dw(2)^2))-...
+    func(du(2),dv(2),dw(1),sqrt(du(2)^2+dv(2)^2+dw(1)^2))-...
+    func(du(1),dv(1),dw(1),sqrt(du(1)^2+dv(1)^2+dw(1)^2));
+
+end

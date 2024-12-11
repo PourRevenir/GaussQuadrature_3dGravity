@@ -4,7 +4,7 @@ function f = CuboidIntegrand_gx(x,y,z)
 %   f = CuboidIntegrand_gx(x,y,z)
 %
 %   Input
-%       f - gx
+%       x,y,z - xi,eta,zeta
 %
 
     f =@(xi,eta,zeta) (xi-x)./sqrt((x-xi).^2+(y-eta).^2+(z-zeta).^2).^3;

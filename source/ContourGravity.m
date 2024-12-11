@@ -1,22 +1,28 @@
-function ImagescGravity(area,values)
-%ImagescGravity Imagesc maps of gravity anomalies are drawn.
+function ContourGravity(area,values,Colormap)
+%ContourGravity Contour maps of gravity anomalies are drawn.
 %   
-%   ImagescGravity(area,values)
+%   ContourGravity(area,values)
 %
 %   Input
 %       area - [x;y] x,y is a row vector
 %       values - {gx,gy,gz,uxx,uxy,uxz,uyy,uyz,uzz};
 %
+arguments
+    area(2,:) {mustBeNumeric(area)}
+    values
+    Colormap(1,1) string = 'plasma'
+end
+
     x = area(1,:);
     y = area(2,:);
-    xx = [x(1),x(end)];
-    yy = [y(1),y(end)];
+    [xx,yy] = meshgrid(x,y);
 
-    cmap = load("plasma.txt");
+    cmap = strcat(Colormap,'.txt');
+    cmap = load(cell2mat(cmap));
    
     figure
     subplot(4,3,1)
-    imagesc(xx,yy,values{1})
+    contourf(xx,yy,values{1})
     xlabel('x/m')
     ylabel('y/m')
     title('gx')
@@ -25,7 +31,7 @@ function ImagescGravity(area,values)
     axis image
 
     subplot(4,3,2)
-    imagesc(xx,yy,values{2})
+    contourf(xx,yy,values{2})
     xlabel('x/m')
     ylabel('y/m')
     title('gy')
@@ -34,7 +40,7 @@ function ImagescGravity(area,values)
     axis image
 
     subplot(4,3,3)
-    imagesc(xx,yy,values{3})
+    contourf(xx,yy,values{3})
     xlabel('x/m')
     ylabel('y/m')
     title('gz')
@@ -43,7 +49,7 @@ function ImagescGravity(area,values)
     axis image
 
     subplot(4,3,4)
-    imagesc(xx,yy,values{4})
+    contourf(xx,yy,values{4})
     xlabel('x/m')
     ylabel('y/m')
     title('uxx')
@@ -52,7 +58,7 @@ function ImagescGravity(area,values)
     axis image
 
     subplot(4,3,5)
-    imagesc(xx,yy,values{5})
+    contourf(xx,yy,values{5})
     xlabel('x/m')
     ylabel('y/m')
     title('uxy')
@@ -61,7 +67,7 @@ function ImagescGravity(area,values)
     axis image
 
     subplot(4,3,6)
-    imagesc(xx,yy,values{6})
+    contourf(xx,yy,values{6})
     xlabel('x/m')
     ylabel('y/m')
     title('uxz')
@@ -70,7 +76,7 @@ function ImagescGravity(area,values)
     axis image
 
     subplot(4,3,8)
-    imagesc(xx,yy,values{7})
+    contourf(xx,yy,values{7})
     xlabel('x/m')
     ylabel('y/m')
     title('uyy')
@@ -79,7 +85,7 @@ function ImagescGravity(area,values)
     axis image
 
     subplot(4,3,9)
-    imagesc(xx,yy,values{8})
+    contourf(xx,yy,values{8})
     xlabel('x/m')
     ylabel('y/m')
     title('uyz')
@@ -88,7 +94,7 @@ function ImagescGravity(area,values)
     axis image
 
     subplot(4,3,12)
-    imagesc(xx,yy,values{9})
+    contourf(xx,yy,values{9})
     xlabel('x/m')
     ylabel('y/m')
     title('uzz')
