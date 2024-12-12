@@ -6,7 +6,7 @@
 
 clearvars
 
-N = 35; % Count points
+N = 40; % Count points
 pointi = 51;
 pointj = 30; % Point coordinates
 index = 1; % 1.gx 2.gy 3.gz 4.uxx 5.uxy 6.uxz 7.uyy 8.uyz 9.uzz

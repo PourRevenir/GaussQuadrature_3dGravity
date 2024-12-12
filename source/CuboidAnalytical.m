@@ -5,9 +5,9 @@ function value = CuboidAnalytical(func,du,dv,dw)
 %
 %   Input
 %       func - gw,Tww,Tuv
-%       du - [du1,du2]
-%       dv - [dv1,dv2]
-%       dw - [dw1,dw2]
+%       du - [a1-u,a2-u]
+%       dv - [b1-v,b2-v]
+%       dw - [c1-w,c2-w]
 %
 %   Output
 %       value - gx

@@ -62,12 +62,12 @@ end
     gx = -Gp*gx;
     gy = -Gp*gy;
     gz = -Gp*gz;
-    uxx = -Gp*uxx;
-    uxy = Gp*uxy;
-    uxz = Gp*uxz;
-    uyy = -Gp*uyy;
-    uyz = Gp*uyz;
-    uzz = -Gp*uzz;
+    uxx = -Gp*uxx*1e3;
+    uxy = Gp*uxy*1e3;
+    uxz = Gp*uxz*1e3;
+    uyy = -Gp*uyy*1e3;
+    uyz = Gp*uyz*1e3;
+    uzz = -Gp*uzz*1e3;
 
     values = {gx,gy,gz,uxx,uxy,uxz,uyy,uyz,uzz};
 
