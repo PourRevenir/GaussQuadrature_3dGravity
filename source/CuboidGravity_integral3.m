@@ -44,29 +44,29 @@ end
     uyz = zeros(X,Y);
 
     
-    for i = 1:X
-        for j = 1:Y
-        gx(i,j) = integral3(CuboidIntegrand_gx(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
-        gy(i,j) = integral3(CuboidIntegrand_gy(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
-        gz(i,j) = integral3(CuboidIntegrand_gz(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
-        uxx(i,j) = integral3(CuboidIntegrand_uxx(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
-        uxy(i,j) = integral3(CuboidIntegrand_uxy(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
-        uxz(i,j) = integral3(CuboidIntegrand_uxz(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
-        uyy(i,j) = integral3(CuboidIntegrand_uyy(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
-        uyz(i,j) = integral3(CuboidIntegrand_uyz(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
-        uzz(i,j) = integral3(CuboidIntegrand_uzz(x(i),y(j),0),a1,a2,b1,b2,c1,c2);
+    for i = 1:Y
+        for j = 1:X
+        gx(i,j) = integral3(CuboidIntegrand_gx(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
+        gy(i,j) = integral3(CuboidIntegrand_gy(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
+        gz(i,j) = integral3(CuboidIntegrand_gz(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
+        uxx(i,j) = integral3(CuboidIntegrand_uxx(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
+        uxy(i,j) = integral3(CuboidIntegrand_uxy(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
+        uxz(i,j) = integral3(CuboidIntegrand_uxz(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
+        uyy(i,j) = integral3(CuboidIntegrand_uyy(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
+        uyz(i,j) = integral3(CuboidIntegrand_uyz(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
+        uzz(i,j) = integral3(CuboidIntegrand_uzz(x(j),y(i),0),a1,a2,b1,b2,c1,c2);
         end
     end
 
-    gx = Gp*gx';
-    gy = Gp*gy';
-    gz = Gp*gz';
-    uxx = Gp*uxx';
-    uxy = Gp*uxy';
-    uxz = Gp*uxz';
-    uyy = Gp*uyy';
-    uyz = Gp*uyz';
-    uzz = Gp*uzz';
+    gx = Gp*gx;
+    gy = Gp*gy;
+    gz = Gp*gz;
+    uxx = Gp*uxx*1e3;
+    uxy = Gp*uxy*1e3;
+    uxz = Gp*uxz*1e3;
+    uyy = Gp*uyy*1e3;
+    uyz = Gp*uyz*1e3;
+    uzz = Gp*uzz*1e3;
 
     values = {gx,gy,gz,uxx,uxy,uxz,uyy,uyz,uzz};
 
