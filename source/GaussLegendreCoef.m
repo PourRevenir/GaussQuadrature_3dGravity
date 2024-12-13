@@ -11,16 +11,10 @@ function [w,x] = GaussLegendreCoef(n)
 %       x - Gaussian points
 %
 
-    polyPrevious = 1;
-    polyCurrent = [1 0];
-
-    for i = 1:n
-        polyForward = [polyCurrent*(2*i+1)/(i+1) 0];
-        polyForward = polyForward - [0 0 polyPrevious*i/(i+1)];
-        polyPrevious = polyCurrent;
-        polyCurrent = polyForward;
-    end
+    beta  = 0.5./sqrt(1-(2*(1:n-1)).^(-2));
+    T     = diag(beta,1) + diag(beta,-1);
+    [V,D] = eig(T);
+    x = diag(D);
+    w     = 2*V(1,:)'.^2;
     
-    x = roots(polyPrevious);
-    w = 2*(1-x.^2)./((n+1)*polyval(polyCurrent,x)).^2;
 end

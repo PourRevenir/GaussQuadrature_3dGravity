@@ -68,7 +68,6 @@ end
     uyy = -Gp*uyy*1e3;
     uyz = Gp*uyz*1e3;
     uzz = -Gp*uzz*1e3;
-
     values = {gx,gy,gz,uxx,uxy,uxz,uyy,uyz,uzz};
 
 end

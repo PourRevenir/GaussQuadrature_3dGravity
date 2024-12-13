@@ -12,19 +12,19 @@ function [x,y,z,W] = GaussChebyshevCoef3(model,n)
 %       x,y,z - Gaussian points
 %
     if n(1) == n(2) && n(2) == n(3)
-        [w,x] = GaussLegendreCoef(n(1));
-        r = sqrt(1-x.^2);
+        [w,xi] = GaussLegendreCoef(n(1));
+        r = sqrt(1-xi.^2);
         wi = 0.5*(model(2)-model(1))*w.*r;
         wj = 0.5*(model(4)-model(3))*w.*r;
         wk = 0.5*(model(6)-model(5))*w.*r;
 
-        x = 0.5*((model(2)-model(1))*x+model(1)+model(2));
-        y = 0.5*((model(4)-model(3))*x+model(3)+model(4));
-        z = 0.5*((model(6)-model(5))*x+model(5)+model(6));
+        x = 0.5*((model(2)-model(1))*xi+model(1)+model(2));
+        y = 0.5*((model(4)-model(3))*xi+model(3)+model(4));
+        z = 0.5*((model(6)-model(5))*xi+model(5)+model(6));
 
         [wi,wj,wk] = meshgrid(wi,wj,wk);
         [x,y,z] = meshgrid(x,y,z);
-        W = wi.*wj.*wk;
+        W = 2*wi.*wj.*wk;
     else
         [wi,x] = GaussLegendreCoef(n(1));
         [wj,y] = GaussLegendreCoef(n(2));
@@ -40,7 +40,7 @@ function [x,y,z,W] = GaussChebyshevCoef3(model,n)
 
         [wi,wj,wk] = meshgrid(wi,wj,wk);
         [x,y,z] = meshgrid(x,y,z);
-        W = wi.*wj.*wk;
+        W = 2*wi.*wj.*wk;
     end
 
 end
