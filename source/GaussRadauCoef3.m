@@ -12,7 +12,7 @@ function [x,y,z,W] = GaussRadauCoef3(model,n)
 %       x,y,z - Gaussian points
 %
     if n(1) == n(2) && n(2) == n(3)
-        [w,xi] = GaussLobattoCoef(n(1));
+        [w,xi] = GaussRadauCoef(n(1));
        
         wi = 0.5*(model(2)-model(1))*w;
         wj = 0.5*(model(4)-model(3))*w;
