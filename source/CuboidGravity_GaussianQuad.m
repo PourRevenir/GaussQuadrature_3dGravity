@@ -45,9 +45,9 @@ end
         case 'gche'
             [xi,yj,zk,W] = GaussChebyshevCoef3(model,options.n);
         case 'grad'
-            [xi,yj,zk,W] = GaussRadauCoef3(model,options.n);
+            [xi,yj,zk,W] = RadauCoef3(model,options.n);
         case 'glob'
-            [xi,yj,zk,W] = GaussLobattoCoef3(model,options.n);
+            [xi,yj,zk,W] = LobattoCoef3(model,options.n);
     end
 
     for i = 1:Y

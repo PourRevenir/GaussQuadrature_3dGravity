@@ -1,6 +1,6 @@
 function [x,y,z,W] = GaussChebyshevCoef3(model,n)
-%GaussChebyshevCoef Calculate Gauss-Chebyshev quadrature coefficients and
-%Gaussian points.
+%GaussChebyshevCoef Calculate Gauss-Chebyshev quadrature weights and
+%optimal abscissas.
 %
 %   [x,y,z,W] = GaussChebyshevCoef(model,n)
 %
@@ -8,8 +8,8 @@ function [x,y,z,W] = GaussChebyshevCoef3(model,n)
 %       model - [a1,a2,b1,b2,c1,c2,density]
 %       n - [n1,n2,n3]
 %   Output
-%       W - Gauss-Chebyshev quadrature coefficients
-%       x,y,z - Gaussian points
+%       W - Gauss-Chebyshev quadrature weights
+%       x,y,z - optimal abscissas
 %
     if n(1) == n(2) && n(2) == n(3)
         [w,xi] = GaussChebyshevCoef(n(1));

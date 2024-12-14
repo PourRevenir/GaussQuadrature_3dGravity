@@ -1,18 +1,18 @@
-function [x,y,z,W] = GaussRadauCoef3(model,n)
-%GaussRadauCoef Calculate Gauss-Radau quadrature coefficients and
-%Gaussian points.
+function [x,y,z,W] = LobattoCoef3(model,n)
+%LobattoCoef Calculate Lobatto quadrature weights and
+%abscissas.
 %
-%   [x,y,z,W] = GaussRadauCoef(model,n)
+%   [x,y,z,W] = LobattoCoef(model,n)
 %
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]
 %       n - [n1,n2,n3]
 %   Output
-%       W - Gauss-Radau quadrature coefficients
-%       x,y,z - Gaussian points
+%       W - Lobatto quadrature weights
+%       x,y,z - abscissas
 %
     if n(1) == n(2) && n(2) == n(3)
-        [w,xi] = GaussRadauCoef(n(1));
+        [w,xi] = LobattoCoef(n(1));
        
         wi = 0.5*(model(2)-model(1))*w;
         wj = 0.5*(model(4)-model(3))*w;
@@ -26,9 +26,9 @@ function [x,y,z,W] = GaussRadauCoef3(model,n)
         [x,y,z] = meshgrid(x,y,z);
         W = wi.*wj.*wk;
     else
-        [wi,x] = GaussRadauCoef(n(1));
-        [wj,y] = GaussRadauCoef(n(2));
-        [wk,z] = GaussRadauCoef(n(3));
+        [wi,x] = LobattoCoef(n(1));
+        [wj,y] = LobattoCoef(n(2));
+        [wk,z] = LobattoCoef(n(3));
         
         wi = 0.5*(model(2)-model(1))*wi;
         wj = 0.5*(model(4)-model(3))*wj;
@@ -42,5 +42,5 @@ function [x,y,z,W] = GaussRadauCoef3(model,n)
         [x,y,z] = meshgrid(x,y,z);
         W = wi.*wj.*wk;
     end
-
+    
 end

@@ -5,8 +5,11 @@
 % 2024-12-12
 
 clearvars
+
+format long
+
 n1 = 3;
-N = 40; % Count points
+N = 75; % Count points
 pointi = 51;
 pointj = 31; % Point coordinates
 index = 1; % 1.gx 2.gy 3.gz 4.uxx 5.uxy 6.uxz 7.uyy 8.uyz 9.uzz
@@ -39,9 +42,9 @@ for n = n1:N
     v1(n-n1+1) = Gp*GaussianQuad3(CuboidIntegrand_gx(x(pointj),y(pointi),0),xi,yj,zk,W);
     [xi,yj,zk,W] = GaussChebyshevCoef3(model,n*ones(1,3));
     v2(n-n1+1) = Gp*GaussianQuad3(CuboidIntegrand_gx(x(pointj),y(pointi),0),xi,yj,zk,W);
-    [xi,yj,zk,W] = GaussRadauCoef3(model,n*ones(1,3));
+    [xi,yj,zk,W] = RadauCoef3(model,n*ones(1,3));
     v3(n-n1+1) = Gp*GaussianQuad3(CuboidIntegrand_gx(x(pointj),y(pointi),0),xi,yj,zk,W);
-    [xi,yj,zk,W] = GaussLobattoCoef3(model,n*ones(1,3));
+    [xi,yj,zk,W] = LobattoCoef3(model,n*ones(1,3));
     v4(n-n1+1) = Gp*GaussianQuad3(CuboidIntegrand_gx(x(pointj),y(pointi),0),xi,yj,zk,W);
 end
 
@@ -60,7 +63,7 @@ semilogy(n,e3,'LineWidth',1.3)
 hold on
 semilogy(n,e4,'LineWidth',1.3)
 grid on
-legend('Gauss-Legendre','Gauss-Chebyshev','Radau','Lobatto','Location','southwest')
+legend('Gauss-Legendre','Gauss-Chebyshev','Radau','Lobatto','Location','east')
 
 xlabel('n')
 ylabel('Error')
