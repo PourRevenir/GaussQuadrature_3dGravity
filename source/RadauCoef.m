@@ -1,6 +1,6 @@
 function [w,x] = RadauCoef(n)
 %RadauCoef Calculate Radau quadrature weights and
-%abscissas.
+%          free abscissas.
 %
 %   [w,x] = RadauCoef(n)
 %
@@ -8,7 +8,7 @@ function [w,x] = RadauCoef(n)
 %       n - number of abscissas
 %   Output
 %       w - -Radau quadrature weights
-%       x - abscissas
+%       x - free abscissas
 %
 
     n1 = n+1;

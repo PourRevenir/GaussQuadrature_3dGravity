@@ -1,14 +1,14 @@
 function [w,x] = LobattoCoef(n)
 %LobattoCoef Calculate Lobatto quadrature weights and
-%abscissas.
+%            free abscissas.
 %
 %   [w,x] = LobattoCoef(n)
 %
 %   Input
-%       n - number of abscissas
+%       n - number of free abscissas
 %   Output
 %       w - -Lobatto quadrature weights
-%       x - abscissas
+%       x - free abscissas
 %
 
     n1=n+1;

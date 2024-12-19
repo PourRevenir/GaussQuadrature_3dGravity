@@ -1,5 +1,5 @@
 function value = CuboidAnalytical(func,du,dv,dw)
-%CuboidAnalytical A function for calculating analytical solutions to gx.
+%CuboidAnalytical A function for calculating analytical solutions.
 %
 %   value = CuboidAnalytical(func,du,dv,dw,r)
 %
@@ -10,7 +10,7 @@ function value = CuboidAnalytical(func,du,dv,dw)
 %       dw - [c1-w,c2-w]
 %
 %   Output
-%       value - gx
+%       value - value
 %
 
     value = ...

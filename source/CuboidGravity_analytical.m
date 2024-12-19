@@ -1,9 +1,9 @@
 function values = CuboidGravity_analytical(model,area)
-%CuboidGravity_analytical1 Calculate cuboid gravity anomalies and plot
-%images. The cuboid gravity anomaly is calculated using the analytic solution
+%CuboidGravity_analytical The cuboid gravity anomaly is calculated 
+%                         using the analytic solution
 % 
-%   values = CuboidGravity_analytical1(model)
-%   values = CuboidGravity_analytical1(model,area)
+%   values = CuboidGravity_analytical(model)
+%   values = CuboidGravity_analytical(model,area)
 %   
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]

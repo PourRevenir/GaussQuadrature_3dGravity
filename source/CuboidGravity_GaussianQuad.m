@@ -1,6 +1,6 @@
 function values = CuboidGravity_GaussianQuad(model,area,options)
 %CuboidGravity Gaussian quadrature method is used to calculate cuboid
-%gravity anomalies.
+%              gravity anomalies.
 %
 %   values = CuboidGravity(model)
 %   values = CuboidGravity(model,area)
@@ -9,7 +9,7 @@ function values = CuboidGravity_GaussianQuad(model,area,options)
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]
 %       area - [x;y]
-%       method - 'gleg','gche','grad','glob','int3','ana'
+%       method - 'gl','gc','r','l'
 %
 %   Output
 %       values - {gx,gy,gz,uxx,uxy,uxz,uyy,uyz,uzz}
@@ -17,7 +17,7 @@ function values = CuboidGravity_GaussianQuad(model,area,options)
 arguments
     model(1,7) {mustBeNumeric(model)}
     area(2,:) {mustBeNumeric(area)} = ObservationPlane(model)
-    options.method(1,1) string {mustBeMember(options.method,{'gleg','gche','grad','glob'})} = 'gleg'
+    options.method(1,1) string {mustBeMember(options.method,{'gl','gc','r','l'})} = 'gl'
     options.n(1,3) {mustBeNumeric(options.n)} = [5,5,5];
 end
 
@@ -39,16 +39,7 @@ end
     uyz = zeros(X,Y);
     uzz = zeros(X,Y);
 
-    switch options.method
-        case 'gleg'
-            [xi,yj,zk,W] = GaussLegendreCoef3(model,options.n);
-        case 'gche'
-            [xi,yj,zk,W] = GaussChebyshevCoef3(model,options.n);
-        case 'grad'
-            [xi,yj,zk,W] = RadauCoef3(model,options.n);
-        case 'glob'
-            [xi,yj,zk,W] = LobattoCoef3(model,options.n);
-    end
+    [xi,yj,zk,W] = GaussianCoef3(model,options.n,options.method);
 
     for i = 1:Y
         for j = 1:X

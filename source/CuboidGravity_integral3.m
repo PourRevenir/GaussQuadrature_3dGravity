@@ -1,7 +1,6 @@
 function values = CuboidGravity_integral3(model,area)
-%CuboidGravityAnomaly Calculate cuboid gravity anomalies and plot
-%images.The matlab built-in function integral3 is used to calculate the
-%cuboid gravity anomaly.
+%CuboidGravity_integral3 The matlab built-in function integral3 is used 
+%                        to calculate the cuboid gravity anomaly.
 % 
 %   values = CuboidGravity_integral3(model)
 %   values = CuboidGravity_integral3(model,area)

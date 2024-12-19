@@ -1,6 +1,6 @@
 function [w,x] = GaussLegendreCoef(n)
 %GaussLegendreCoef Calculate Gauss-Legendre quadrature weights and
-%optimal abscissas.
+%                  optimal abscissas.
 %
 %   [w,x] = GaussLegendreCoef(n)
 %
