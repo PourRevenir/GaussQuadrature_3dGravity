@@ -4,7 +4,8 @@ function E = ErrorCompare(V,A)
 %   E = ErrorCompare(V,A)
 %
 %   Input
-%       
+%       V - values 1×9 cell
+%       A - analytics 1×9 cell
     
     E = cell(1,9);
 

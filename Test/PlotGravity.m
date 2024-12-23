@@ -10,7 +10,7 @@ y = area(2,:);
 
 cmap = load('viridis.txt');
 %% load data
-load Data\Data\ErrorByRadau.mat
+load Data\Data\ErrorByIntegral3.mat
 
 values = E;
 
