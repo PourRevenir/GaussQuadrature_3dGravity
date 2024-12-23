@@ -1,9 +1,58 @@
 ## Forward modeling of 3D gravity anomalies using high-order Gaussian quadrature
 
-[Chinese ](./document/README.md) |  [Document](https://gauss-quadrature-3d-gravity.vercel.app/)
+*Copyright (c) 2024 by Central South University, China. All Rights Reserved.*
 
-This program calculates the gravity anomalies generated in the horizontal plane by a cuboid gravity anomaly model with given parameters.
+>This program uses high order Gaussian orthogonality to calculate gravity anomalies and gravity gradient anomalies for cuboid models. The program is written in MATLAB language. The project complies with the MIT open source protocol and is free to use and modify. 
 
-**It is recommended that you use a version no later than MATLAB R2024a.** If you run into problems with other versions of MATLAB, you can submit an issue to us.
+### Contributors
 
-Open `main.mlx` in matlab and use our code.
+Y. Yang [OCRID](https://orcid.org/0009-0002-4733-6663) X. Tong [OCRID](https://orcid.org/0000-0001-8641-9360) and H. Li.
+
+Contact by <yangyaokun@csu.edu.cn>.
+
+<!-- ### Citing
+
+>If you use the `GaussQuadrature_3dGravity` in your research, please cite the following paper:
+
+- Y. Yang and X. Tong. (2024). Forward modeling of 3D gravity anomalies using high-order Gaussian quadrature.
+
+```tex
+@article{yang2024gaussian,
+  title={Forward modeling of 3D gravity anomalies using high-order Gaussian quadrature},
+  author={Yang, Yaokun and Tong, Xiaozhong},
+  journal={},
+  volume={},
+  number={},
+  pages={},
+  year={2024},
+  publisher={}
+}
+``` -->
+
+### Notice
+
+**It is recommended that you use a version no later than MATLAB R2019b.** We also recommend that you use the latest version of MATLAB software like MATLAB R2024a or MATLAB R2024b. If you run into problems with other versions of MATLAB, you can [submit an issue](https://github.com/PourRevenir/GaussQuadrature_3dGravity/issues)  or send an email to us.
+
+### Starting
+
+1. Clone the repository to your local machine.
+   
+```bash
+$ git clone https://github.com/PourRevenir/GaussQuadrature_3dGravity.git
+```
+
+2. Open MATLAB and navigate to the cloned repository. Then, run the command to add the repository to the MATLAB path.
+
+```matlab
+>>> PATH
+```
+
+3. Open the `main.mlx` file and try the script.
+
+### Contributing
+
+All constructive contributions are welcome, e.g. bug reports, discussions or suggestions for new features. You can either [open an issue on GitHub](https://github.com/PourRevenir/GaussQuadrature_3dGravity/issues) or make a pull request with your proposed changes. Before making a pull request, check if there is a corresponding issue opened and reference it in the pull request. If there isn't one, it is recommended to open one with your rationale for the change. New functionality or significant changes to the code that alter its behavior should come with corresponding tests and documentation. If you are new to contributing, you can open a work-in-progress pull request and have it iteratively reviewed.
+
+### References
+
+- [Mathworld Wolfram](https://mathworld.wolfram.com/GaussianQuadrature.html)
