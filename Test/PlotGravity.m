@@ -1,5 +1,10 @@
-% plot the figure in paper
-% December 23, 2024 by yang
+% Copyright (c) 2024 by Central South University.                   
+% coding: utf-8
+% Plot the figure in the paper.                                                     
+% Programme written by Y. Yang                            
+% For more information, contact by email: <yangyaokun@csu.edu.cn>.  
+% Please read the README.md before use.                             
+%-------------------------------------------------------------------
 
 clearvars
 
@@ -10,16 +15,16 @@ y = area(2,:);
 
 cmap = load('viridis.txt');
 %% load data
-load Data\Data\ErrorByIntegral3.mat
+load Data\Data\CuboidGravityByGaussLegendre.mat
 
-values = E;
+values = v;
 
-%% plot
+%% plot the figure
 
-figure('Name','Gravity anomaly of cuboid','Position',[157.8,62.6,750.4,712])
+figure('Name','Gravity anomaly of cuboid','Position',[157.8,49.8,1003.2,733.6])
 fsize = 12;
 
-subplot(4,3,1)
+subplot(3,3,1)
 imagesc(x,y,values{1})
 gx = gca;
 gx.XLabel.String = 'x(m)';
@@ -32,7 +37,7 @@ colorbar
 colormap(cmap)
 axis image
 
-subplot(4,3,2)
+subplot(3,3,2)
 imagesc(x,y,values{2})
 gy = gca;
 gy.XLabel.String = 'x(m)';
@@ -45,7 +50,7 @@ colorbar
 colormap(cmap)
 axis image
 
-subplot(4,3,3)
+subplot(3,3,3)
 imagesc(x,y,values{3})
 gz = gca;
 gz.XLabel.String = 'x(m)';
@@ -58,7 +63,7 @@ colorbar
 colormap(cmap)
 axis image
 
-subplot(4,3,4)
+subplot(3,3,4)
 imagesc(x,y,values{4})
 uxx = gca;
 uxx.XLabel.String = 'x(m)';
@@ -71,7 +76,7 @@ colorbar
 colormap(cmap)
 axis image
 
-subplot(4,3,5)
+subplot(3,3,5)
 imagesc(x,y,values{5})
 uxy = gca;
 uxy.XLabel.String = 'x(m)';
@@ -84,7 +89,7 @@ colorbar
 colormap(cmap)
 axis image
 
-subplot(4,3,6)
+subplot(3,3,6)
 imagesc(x,y,values{6})
 uxz = gca;
 uxz.XLabel.String = 'x(m)';
@@ -97,7 +102,7 @@ colorbar
 colormap(cmap)
 axis image
 
-subplot(4,3,8)
+subplot(3,3,7)
 imagesc(x,y,values{7})
 uyy = gca;
 uyy.XLabel.String = 'x(m)';
@@ -110,7 +115,7 @@ colorbar
 colormap(cmap)
 axis image
 
-subplot(4,3,9)
+subplot(3,3,8)
 imagesc(x,y,values{8})
 uyz = gca;
 uyz.XLabel.String = 'x(m)';
@@ -123,7 +128,7 @@ colorbar
 colormap(cmap)
 axis image
 
-subplot(4,3,12)
+subplot(3,3,9)
 imagesc(x,y,values{9})
 uzz = gca;
 uzz.XLabel.String = 'x(m)';

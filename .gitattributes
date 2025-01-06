@@ -1,0 +1,2 @@
+*.segy filter=lfs diff=lfs merge=lfs -text
+.su filter=lfs diff=lfs merge=lfs -text

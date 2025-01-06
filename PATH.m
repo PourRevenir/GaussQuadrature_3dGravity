@@ -6,8 +6,8 @@ addpath("Source\")
 addpath("Test\")
 addpath("Figure\")
 addpath("Data\Color\")
-addpath("Data\Model\")
-addpath("Data\Data\")
+addpath("Data\")
+addpath("Model\")
 addpath("Figure\")
 
 end

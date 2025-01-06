@@ -7,7 +7,7 @@ function [w,x] = ClenshawCurtisCoef3(n)
 %   Input
 %       n - number of abscissas
 %   Output
-%       w - -ClenshawCurtis quadrature weights
+%       w - ClenshawCurtis quadrature weights
 %       x - abscissas
 %
 

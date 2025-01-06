@@ -2,9 +2,9 @@ function values = CuboidGravity_GaussianQuad(model,area,options)
 %CuboidGravity Gaussian quadrature method is used to calculate cuboid
 %              gravity anomalies.
 %
-%   values = CuboidGravity(model)
-%   values = CuboidGravity(model,area)
-%   values = CuboidGravity(model,area,'method','gleg','n',n)
+%   values = CuboidGravity_GaussianQuad(model)
+%   values = CuboidGravity_GaussianQuad(model,area)
+%   values = CuboidGravity_GaussianQuad(model,area,'method','gleg','n',n)
 %
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]

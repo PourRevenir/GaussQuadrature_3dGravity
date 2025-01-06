@@ -44,7 +44,7 @@ $ git clone https://github.com/PourRevenir/GaussQuadrature_3dGravity.git
 2. Open MATLAB and navigate to the cloned repository. Then, run the command to add the repository to the MATLAB path.
 
 ```matlab
->>> PATH
+>> PATH
 ```
 
 3. Open the `main.mlx` file and try the script.
