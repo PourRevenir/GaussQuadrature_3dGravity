@@ -31,7 +31,7 @@ Contact by <yangyaokun@csu.edu.cn>.
 
 ### Notice
 
-**It is recommended that you use a version no later than MATLAB R2019b.** We also recommend that you use the latest version of MATLAB software like MATLAB R2024a or MATLAB R2024b. If you run into problems with other versions of MATLAB, you can [submit an issue](https://github.com/PourRevenir/GaussQuadrature_3dGravity/issues)  or send an email to us.
+**It is recommended that you use a version no later than MATLAB R2019b.** We also recommend that you use the latest version of MATLAB software like MATLAB R2024b. If you run into problems with other versions of MATLAB, you can [submit an issue](https://github.com/PourRevenir/GaussQuadrature_3dGravity/issues)  or send an email to us.
 
 ### Starting
 
@@ -49,9 +49,9 @@ $ git clone https://github.com/PourRevenir/GaussQuadrature_3dGravity.git
 
 3. Open the `main.mlx` file and try the script.
 
-### Model and toolbox
+### Model
 
-The real model used in the article comes from [SEG/EAGE Salt and Overthrust Models](https://wiki.seg.org/wiki/SEG/EAGE_Salt_and_Overthrust_Models). In order to process data in.segy and.su formats, you also need to download the matlab toolbox [Seislab 3.02](https://ww2.mathworks.cn/matlabcentral/fileexchange/53109-seislab-3-02).
+The real model used in the article comes from [SEG/EAGE Salt and Overthrust Models](https://wiki.seg.org/wiki/SEG/EAGE_Salt_and_Overthrust_Models).
 
 We provide a python program to do this, just run `download.py`.
 

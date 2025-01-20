@@ -4,7 +4,7 @@ function values = CuboidGravity_GaussianQuad(model,area,options)
 %
 %   values = CuboidGravity_GaussianQuad(model)
 %   values = CuboidGravity_GaussianQuad(model,area)
-%   values = CuboidGravity_GaussianQuad(model,area,'method','gleg','n',n)
+%   values = CuboidGravity_GaussianQuad(model,area,'method','gl','n',n)
 %
 %   Input
 %       model - [a1,a2,b1,b2,c1,c2,density]
