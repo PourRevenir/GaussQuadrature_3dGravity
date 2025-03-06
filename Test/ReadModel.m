@@ -1,22 +1,37 @@
-clearvars
+function Model = ReadModel(modelfile,n)
+% ReadModel Read the model file
+% 
+%   Model = ReadModel(modelfile,n)
+%   
+%   Input
+%       modelfile - model file
+%       nx - number of cells in x direction
+%       ny - number of cells in y direction
+%       nz - number of cells in z direction
+%
+%   Output
+%       Model - model structure
+%
+arguments
+    modelfile string = 'Saltf@@'
+    n(1,3) {mustBeNumeric(n)} = [676,676,210]
+end
 
-nx = 676;
-ny = 676;
-nz = 210;
+    % read model file
+    fid = fopen(modelfile, 'rb', 'ieee-be');
+    data = fread(fid, prod(n), 'float32');
+    fclose(fid);
 
-fid = fopen('Saltf@@', 'rb', 'ieee-be');
-data = fread(fid, nx * ny * nz, 'float32');
-fclose(fid);
-velocity = reshape(data, [nx, ny, nz]);
+    % reshape model and convert to model structure
+    density = reshape(data,n);
+    density(density < 4000) = 0;
 
-velocity(velocity < 4000) = 0;
-velocity(velocity > 4000) = -200;
+    % find the non-zero density values
+    [x, y, z] = ind2sub(size(density), find(density ~= 0));
+    x = (x - 1) * 20 - 6760;
+    y = (y - 1) * 20 - 6760;
+    z = (z - 1) * 20;
 
-figure;
-[x, y, z] = ind2sub(size(velocity), find(velocity ~= 0));
-scatter3(x, y, z, 10, velocity(velocity ~= 0), 'filled');
-colorbar;
-title('Modified Velocity Regions');
-xlabel('X');
-ylabel('Y');
-zlabel('Z');
+    Model = [x, y, z];
+    
+end

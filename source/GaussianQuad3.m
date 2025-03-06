@@ -1,11 +1,11 @@
-function I = GaussianQuad3(func,x,y,z,W)
+function I = GaussianQuad3(f,x,y,z,W)
 %GaussianQuad3 Computing triple integrals of the  function using
 %              Gaussian quadrature.
 %   
-%   I = GaussianQuad3(func,x,y,z,W)
+%   I = GaussianQuad3(f,x,y,z,W)
 %   
 %   Input
-%       func - function to be computed
+%       f - function to be computed
 %       x,y,z - Gaussian points
 %       W - Gaussian weights
 %       
@@ -13,7 +13,7 @@ function I = GaussianQuad3(func,x,y,z,W)
 %       I - integrals of the function
 %s
 
-    I = W.*func(x,y,z);
+    I = W.*feval(f,x,y,z);
     I = sum(I(:));
 
 end

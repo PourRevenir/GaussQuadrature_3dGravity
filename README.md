@@ -59,6 +59,36 @@ We provide a python program to do this, just run `download.py`.
 
 All constructive contributions are welcome, e.g. bug reports, discussions or suggestions for new features. You can either [open an issue on GitHub](https://github.com/PourRevenir/GaussQuadrature_3dGravity/issues) or make a pull request with your proposed changes. Before making a pull request, check if there is a corresponding issue opened and reference it in the pull request. If there isn't one, it is recommended to open one with your rationale for the change. New functionality or significant changes to the code that alter its behavior should come with corresponding tests and documentation. If you are new to contributing, you can open a work-in-progress pull request and have it iteratively reviewed.
 
+### Contents
+
+```shell
+├─Figure
+├─Test
+├─Source
+├─Data
+│  └─Color
+│      └─src
+├─.vscode
+└─Model
+    ├─3-D_Salt_Model
+    │  ├─ClassicA
+    │  ├─README
+    │  │  └─INFO
+    │  ├─SURFACES
+    │  ├─ClassicB
+    │  └─VEL_GRIDS
+    │      └─SALTF
+    ├─marmosi
+    └─Salt_Model_3D
+        └─3-D_Salt_Model
+            ├─ClassicA
+            ├─README
+            │  └─INFO
+            ├─SURFACES
+            ├─ClassicB
+            └─VEL_GRIDS
+```
+
 ### References
 
 - [Mathworld Wolfram](https://mathworld.wolfram.com/GaussianQuadrature.html)
