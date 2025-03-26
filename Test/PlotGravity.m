@@ -15,9 +15,9 @@ y = area(2,:);
 
 cmap = load('viridis.txt');
 %% load data
-load Data\CuboidGravityByGaussLegendre.mat
+load Data\CuboidGravityByAnalytical.mat
 
-values = v;
+values = a;
 
 %% plot the figure
 

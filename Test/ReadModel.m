@@ -1,4 +1,4 @@
-function Model = ReadModel(modelfile,n)
+function density = ReadModel(modelfile,n)
 % ReadModel Read the model file
 % 
 %   Model = ReadModel(modelfile,n)
@@ -25,13 +25,14 @@ end
     % reshape model and convert to model structure
     density = reshape(data,n);
     density(density < 4000) = 0;
+    density(density >= 4000) = 1;
 
     % find the non-zero density values
-    [x, y, z] = ind2sub(size(density), find(density ~= 0));
-    x = (x - 1) * 20 - 6760;
-    y = (y - 1) * 20 - 6760;
-    z = (z - 1) * 20;
+    % [x, y, z] = ind2sub(size(density), find(density ~= 0));
+    % x = (x - 1) * 20 - 6760;
+    % y = (y - 1) * 20 - 6760;
+    % z = (z - 1) * 20;
 
-    Model = [x, y, z];
+    % Model = [x, y, z];
     
 end

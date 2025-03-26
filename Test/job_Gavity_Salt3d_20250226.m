@@ -4,7 +4,7 @@
 % programming by Yaokun Yang, Department of Applied Geophiscs, Central South University
 % Feburary 26, 2025
 % ----------------------------------------------------------
-% This program is used to run on the High Performance Computing Center platform of Central South University
+% This program is used to run on the csu-hpc platform
 % For more information, please contact the email: yangyaokun@csu.edu.cn
 %
 
