@@ -36,12 +36,12 @@ end
     gx = -Gp*arrayfun(@(j, i) CuboidAnalytical(gw, dy(:,i), dz, dx(:,j)), X, Y);
     gy = -Gp*arrayfun(@(j, i) CuboidAnalytical(gw, dz, dx(:,j), dy(:,i)), X, Y);
     gz = -Gp*arrayfun(@(j, i) CuboidAnalytical(gw, dx(:,j), dy(:,i), dz), X, Y);
-    uxx = -Gp*1e3*arrayfun(@(j, i) CuboidAnalytical(Tww, dy(:,i), dz, dx(:,j)), X, Y);
-    uxy = Gp*1e3*arrayfun(@(j, i) CuboidAnalytical(Tuv, dx(:,j), dy(:,i), dz), X, Y);
-    uxz = Gp*1e3*arrayfun(@(j, i) CuboidAnalytical(Tuv, dz, dx(:,j), dy(:,i)), X, Y);
-    uyy = -Gp*1e3*arrayfun(@(j, i) CuboidAnalytical(Tww, dz, dx(:,j), dy(:,i)), X, Y);
-    uyz = Gp*1e3*arrayfun(@(j, i) CuboidAnalytical(Tuv, dy(:,i), dz, dx(:,j)), X, Y);
-    uzz = -Gp*1e3*arrayfun(@(j, i) CuboidAnalytical(Tww, dx(:,j), dy(:,i), dz), X, Y);
+    uxx = -Gp*1e4*arrayfun(@(j, i) CuboidAnalytical(Tww, dy(:,i), dz, dx(:,j)), X, Y);
+    uxy = Gp*1e4*arrayfun(@(j, i) CuboidAnalytical(Tuv, dx(:,j), dy(:,i), dz), X, Y);
+    uxz = Gp*1e4*arrayfun(@(j, i) CuboidAnalytical(Tuv, dz, dx(:,j), dy(:,i)), X, Y);
+    uyy = -Gp*1e4*arrayfun(@(j, i) CuboidAnalytical(Tww, dz, dx(:,j), dy(:,i)), X, Y);
+    uyz = Gp*1e4*arrayfun(@(j, i) CuboidAnalytical(Tuv, dy(:,i), dz, dx(:,j)), X, Y);
+    uzz = -Gp*1e4*arrayfun(@(j, i) CuboidAnalytical(Tww, dx(:,j), dy(:,i), dz), X, Y);
 
     values = {gx,gy,gz,uxx,uxy,uxz,uyy,uyz,uzz};
 
